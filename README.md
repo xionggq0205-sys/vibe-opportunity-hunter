@@ -12,18 +12,25 @@
 
 这个 skill 强制走"田野调研"路线：去用户在的地方（Reddit、HN、Product Hunt、IndieHackers、即刻、小红书、V2EX、App Store 差评、GitHub Issues），听他们用自己的话说出痛点，给每个机会附**真实可点击的 URL 引用** + 25 ★ 评分 + 1-2 周 MVP 路径 + 48 小时验证方案。
 
-## 评测结果（iteration 1）
+## 评测结果（iteration 2）
 
 3 个 eval × (with_skill vs no_skill baseline) 量化对比：
 
-| Eval | with_skill | baseline | Δ |
-|---|---|---|---|
-| `generic-zh-no-constraints` | **12/12 (100%)** | 5/12 (42%) | **+58pp** |
-| `domain-focused-en` (AI coding tools) | **9/11 (82%)** | 4/11 (36%) | +46pp |
-| `domain-focused-zh-lifestyle` | **10/13 (77%)** | 6/13 (46%) | +31pp |
-| **平均** | **86.2%** | 41.4% | **+44.8pp** |
+| Eval | iter-2 with_skill | iter-1 with_skill | baseline (no skill) | Δ vs baseline |
+|---|---|---|---|---|
+| `generic-zh-no-constraints` | **12/12 (100%)** | 12/12 (100%) | 5/12 (42%) | +58pp |
+| `domain-focused-en` (AI coding tools) | **11/11 (100%)** | 10/11 (91%) | 5/11 (45%) | +55pp |
+| `domain-focused-zh-lifestyle` | **13/13 (100%)** | 11/13 (85%) | 6/13 (46%) | +54pp |
+| **平均** | **100%** | 92% | 44% | **+56pp** |
 
-主要差距来自：信号源覆盖广度、引用真实性、25★ 评分结构、48h 验证方案、反模式回避。详见 [`evals/evals.json`](evals/evals.json)。
+iter-2 在 iter-1 基础上做了 4 处定点改进：
+
+1. **MVP 时间硬上限** — 任何机会的 MVP 估时强制 ≤ 14 天，超出直接从清单删
+2. **用户指定源不可达兜底** — 小红书/Discord 等反爬源无法直接拿到一手 URL 时，显式标注"非一手"、加"信号源诚实度"章节、给用户 2 个 fallback 选项（贴原帖 URL 或换可抓平台），禁止静悄悄退化到二手源
+3. **25★ 评分维度命名固定** — 频次 / 新鲜度 / 强度 / 用户清晰度 / 替代方案空白，名字+顺序都不能变（保证不同机会可以横向对比）
+4. **跟进钩子模板硬化** — 结尾必须有 `?`、必须列 ≥2 个具体下一步选项（深挖某机会 / 砍 MVP / 换信号源等），每个选项要带可执行动作
+
+详见 [`evals/evals.json`](evals/evals.json)。
 
 ## 安装
 
