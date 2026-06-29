@@ -1,0 +1,70 @@
+{
+  "skill_name": "opportunity-hunter",
+  "evals": [
+    {
+      "id": 1,
+      "name": "generic-zh-no-constraints",
+      "prompt": "我最近想做个 side project 但是不知道做啥，能不能帮我找几个方向？我会 React 和 Python，希望是一两周能做完 MVP 的那种。",
+      "expected_output": "5-10 个机会，每个带原始引用 URL、信号强度评分、MVP 建议、48 小时验证方案。覆盖至少 4 个信号源（含中文 + 英文）。",
+      "assertions": [
+        "输出包含至少 3 个独立机会",
+        "每个机会 ≥2 条用户引用，每条带 http/https URL",
+        "引用来源覆盖至少 3 个不同域名",
+        "至少 1 个机会带完整 25 ★ 评分（5 维度都打分）",
+        "包含 markdown 排序表（≥3 行）",
+        "每个机会有 MVP 建议段（含技术栈 + 时间估计）",
+        "每个机会有 48 小时验证方案段",
+        "无反模式：'AI 聊天 X' / 'ChatGPT for X' / '聚合 X 平台' / 抽象方向",
+        "结尾有主动跟进钩子",
+        "至少 2 个机会技术栈匹配用户技能（React 或 Python）",
+        "所有 MVP 时间估计 ≤ 2 周",
+        "跨语言覆盖：URL 含英文域 + 中文域"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "domain-focused-en",
+      "prompt": "I'm a solo developer looking for product opportunities in the AI coding tools space. What are people complaining about that I could ship in 2 weeks?",
+      "expected_output": "聚焦 AI coding tools 方向的 5-8 个机会，引用来自 Reddit/HN/IndieHackers/GitHub Issues 等开发者社区，每个机会指明用户痛点的具体场景。",
+      "assertions": [
+        "输出包含至少 3 个独立机会",
+        "每个机会 ≥2 条用户引用，每条带 http/https URL",
+        "引用来源覆盖至少 3 个不同域名",
+        "至少 1 个机会带完整 25 ★ 评分",
+        "包含 markdown 排序表（≥3 行）",
+        "每个机会有 MVP 建议段（含技术栈 + 时间估计）",
+        "每个机会有验证方案段",
+        "无反模式：'another AI chatbot' / 'ChatGPT wrapper' / 抽象方向",
+        "结尾有主动跟进钩子",
+        "所有机会聚焦 AI coding / dev tools 范畴",
+        "引用至少 1 条来自 reddit / news.ycombinator / github（开发者社区）",
+        "所有 MVP 时间估计 ≤ 2 周"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "domain-focused-zh-lifestyle",
+      "prompt": "帮我看看最近小红书、即刻上大家都在求什么生活类的小工具？想做点能让普通用户付费的东西。",
+      "expected_output": "聚焦生活类 / C 端工具的机会，引用以小红书 + 即刻为主，可适当补充 V2EX/微博。强调付费意愿信号。",
+      "assertions": [
+        "输出包含至少 3 个独立机会",
+        "每个机会 ≥2 条用户引用，每条带 http/https URL",
+        "引用来源覆盖至少 3 个不同域名",
+        "至少 1 个机会带完整 25 ★ 评分",
+        "包含 markdown 排序表（≥3 行）",
+        "每个机会有 MVP 建议段（含技术栈 + 时间估计）",
+        "每个机会有验证方案段",
+        "无反模式：'AI 聊天 X' / 'ChatGPT for X' / 抽象方向",
+        "结尾有主动跟进钩子",
+        "所有机会聚焦生活类 / C 端范畴",
+        "引用至少 1 条来自 xiaohongshu.com 或 jike.app",
+        "至少 1 个机会目标用户明确为 C 端普通用户",
+        "至少 1 个机会写明 C 端付费路径",
+        "所有 MVP 时间估计 ≤ 2 周"
+      ],
+      "files": []
+    }
+  ]
+}
